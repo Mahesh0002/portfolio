@@ -4,6 +4,9 @@
     font-family: 'Roboto Slab';
     box-sizing: border-box;
 }
+html{
+    scroll-behaviour:smooth;
+}
 body{
     background: #080808;
     color: #fff;
