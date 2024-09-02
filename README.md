@@ -1,1 +1,3 @@
 # portfolio
+um.... 
+it's 'abit' responsive.
