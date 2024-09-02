@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.jpg" class="logo" alt="Logo">
+                <ul id="sidemenu">
+                    <li class="close-btn" onclick="closemenu()"><i class="fa-solid fa-xmark"></i></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <i class="fas fa-bars" id="menu-btn" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Student-Programmer</p>
+                <h1>Hello, I'm <span>Mahesh</span>.</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/imagess.jpg" alt="photo" style="width:100%; height:auto;">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub">About Me</h1>
+                    <p>I am a dedicated Computer Science Engineer with a strong focus on problem-solving and software development.
+                       With a passion for coding and a commitment to continuous learning,  
+                       <br>I strive to leverage technology to create innovative solutions that address real-world challenges.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Programming Languages</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Interests')">Interests & Hobbies</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>C</span></li>
+                            <li><span>Python</span></li>
+                            <li><span>HTML & CSS</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2023</span><br>Undergraduate Student at Vardhaman.</li>
+                            <li><span>2021</span><br>Student at Sri Chaitanya.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Interests">
+                        <ul>
+                            <li><span>Coding</span></li>
+                            <li><span>Lifelong Learning</span></li>
+                            <li><span>Photography</span></li>
+                            <li><span>Reading Comics</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/Calculator.png" alt="Calculator App" class="work-img">
+                    <div class="layer">
+                        <h3>Calculator</h3>
+                        <p>An accessible, mobile-friendly calculator web app coded with semantic HTML,
+                           styled with CSS, and powered by JavaScript for seamless arithmetic functionality.</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/Sliding-images.png" alt="Sliding Images" class="work-img">
+                    <div class="layer">
+                        <h3>Sliding Images</h3>
+                        <p>A smooth, interactive design featuring a minimalist aesthetic for showcasing images.</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-regular fa-paper-plane"></i> maheshganji057@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 96663XXXXX</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/GanjiMahesh?tab=repositories"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/g-mahesh-781237283/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/_mahesh_ganji_/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your name." required>
+                        <input type="email" name="email" id="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>copyright © Mahesh.</p>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (var tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+
+            for (var tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+                tabcontent.style.display = "none"; 
+            }
+
+            event.currentTarget.classList.add("active-link");
+
+            var activeTab = document.getElementById(tabname);
+            activeTab.classList.add("active-tab");
+            activeTab.style.display = "block"; 
+        }
+
+        opentab('Skills');
+
+        // Menu functionality
+        function openmenu() {
+            document.getElementById('sidemenu').classList.add('active');
+        }
+
+        function closemenu() {
+            document.getElementById('sidemenu').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
